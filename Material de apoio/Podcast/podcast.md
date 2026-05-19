@@ -23,6 +23,10 @@ Disponibilizamos abaixo um episódio de podcast especialmente selecionado para a
 👉 [Clique aqui para ouvir o episódio](https://notebooklm.google.com/notebook/8c3c9342-04f0-4549-ad83-98f4858a20de/artifact/2a37c767-e2d1-49cb-9659-5ae76541eff7?utm_source=nlm_web_share&utm_medium=google_oo&utm_campaign=art_share_2&utm_content=&utm_smc=nlm_web_share_google_oo_art_share_2_)
 
 
+## ▶️ Acesse o podcast: POO - Conceitos 
+
+👉 [Clique aqui para ouvir o episódio](https://notebooklm.google.com/notebook/18adb649-f621-46f0-b559-124639f3c06f/artifact/8ea370da-1484-4db1-9ca4-b4cd8b46625e?utm_source=nlm_web_share&utm_medium=google_oo&utm_campaign=art_share_2&utm_content=&utm_smc=nlm_web_share_google_oo_art_share_2_)
+
 
 ## 💡 Dica
 
