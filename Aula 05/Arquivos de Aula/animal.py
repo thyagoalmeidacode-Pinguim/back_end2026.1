@@ -13,6 +13,22 @@ class Animal:
         mensagem = f'O animal {self.nome}, faz {self.som}'
         return mensagem
 
+class PetShop:
+    def __init__(self):
+        self.cadastro = [] #lista
+
+    def cadastrar_animal(self):
+
+        meu_animal = Animal("Amora", "2 meses", etc...)
+        meu_animal.desc_animal()
+
+
+    def mostre_animais(self):
+
+    
+    def main(self):
+
+
 
 cachorro = Animal('Amora','3 meses','bulldog','cachorro','Au Au')
 cachorro.desc_animal()
