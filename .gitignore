@@ -1,4 +1,4 @@
-# Ambiente virtual
+# Ambiente virtual do django
 .venv/
 
 # Cache Python
