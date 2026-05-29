@@ -33,8 +33,13 @@ No macOS, o Python já vem instalado por padrão. Para verificar a versão insta
 
 Para criar e ativar um ambiente virtual Python no Windows, execute os seguintes comandos:
 
+1. Criar o ambiente virtual
 ```bash
 python -m venv .venv
+```
+2. Ativar o ambiente virtual
+
+```bash
 .venv\Scripts\activate
 ```
 
