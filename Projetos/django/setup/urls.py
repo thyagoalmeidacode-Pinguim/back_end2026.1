@@ -16,19 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
-#Diz para o urls onde encontrar a função ola_mundo
-from cliente.views import ola_mundo, contato, home, formulario
+from cliente.views import dados_clientes #Chego na função criada na viewa
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
     #Vai chamar a função ola_mundo dentro do views do app cliente
     #path('endereço/', metodo), 
-    path('ola/', ola_mundo),
-    path('contato_form/', contato),
-
-    
-    path('inicio/', home),
-    path('cadastro/', formulario)
+    path('dados/', dados_clientes)    
 ]

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <!-- Titulo -->
+        <h1>{{ msg }}</h1>
+
+
+        <table border="1">
+            <thead> <!-- Cabeçalho da tabela -->
+                <th>Nome: </th>
+                <th>Idade: </th>
+                <th>Nascimento: </th>
+            </thead>
+
+            <tbody> <!-- Corpo da tabela - Onde vao os dados -->
+
+                {% for cliente in lista %}
+                <tr> <!-- Cria linhas  -->
+                    <td>{{ cliente.nome }}</td>
+                    <td>{{ cliente.idade}}</td>
+                    <td>{{ cliente.nascimento }}</td>
+                </tr>                
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+
+    </main>
+
+</body>
+
+</html>
