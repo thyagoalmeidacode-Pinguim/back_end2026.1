@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path
 
 #Diz para o urls onde encontrar a função ola_mundo
-from cliente.views import ola_mundo, contato
+from cliente.views import ola_mundo, contato, home, formulario
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,4 +27,8 @@ urlpatterns = [
     #path('endereço/', metodo), 
     path('ola/', ola_mundo),
     path('contato_form/', contato),
+
+    
+    path('inicio/', home),
+    path('cadastro/', formulario)
 ]
