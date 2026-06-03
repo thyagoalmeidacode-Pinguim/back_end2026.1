@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <!-- Context - -->
+        <h1>{{ titulo }}</h1>
+
+        <table border="1"> <!-- Inicia a tabela -->
+            <thead> <!-- Cabeçalho da tabela-->
+                <tr><!-- Linha dentro do cabeçalho -->
+                    <th>Nome: </th> <!-- Celula primeira coluna -->
+                    <th>Curso: </th> <!-- Celula da segunda coluna -->
+                    <th>Turma: </th> <!-- Celula da terceira coluna -->
+                    <th>Ações: </th> <!-- Celula da quarta coluna -->
+                </tr>
+            </thead>
+
+            <tbody> <!-- Corpo da tabela -->                
+                
+                {%  for aluno in dados_alunos  %}
+                <tr> <!-- Inicia a tabela -->
+                    <td>{{ aluno.nome }}</td>
+                    <td>{{ aluno.curso }}</td>
+                    <td>{{ aluno.turma }}</td>
+                    <td>
+                        <button>Edição</button>
+                        <button>Excluir</button>
+                    </td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+
+
+
+    </main>
+</body>
+</html>
