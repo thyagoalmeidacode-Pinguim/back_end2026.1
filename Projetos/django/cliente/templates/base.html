@@ -1,0 +1,50 @@
+<!-- Estrutura base  -->
+
+<!-- O arquivo base.html é a moldura do porta retrato -->
+{% load static %} <!-- Passo 1 para o css -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Passo 02 css -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <h1>Sistema Banco Pyton</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url '/' %}">Incio</a></li>
+                <li><a href="{% url 'clientes' %}">Clientes</a></li>
+                <li><a href="{% url 'formulario' %}">Formulario</a></li>
+                <li><a href="{% url 'contato' %}">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main> <!-- Tag de conteúdo -->
+        <!-- Espaço onde a foto aparece -->
+
+        {% block content %}
+
+        <!-- Aqui cao o conteudo da pãgina -->
+
+
+        {% endblock %}
+
+    </main>
+
+    <footer>
+        <p>@ 2026 Heranaç de template</p>
+    </footer>
+
+</body>
+
+</html>
