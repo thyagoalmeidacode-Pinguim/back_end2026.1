@@ -1,5 +1,5 @@
 """
-URL configuration for tuxschool project.
+URL configuration for setup project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/6.0/topics/http/urls/
@@ -17,12 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-""" Ligamos com o views do app """
-from cadastro.views import alunos
-
+#Importar as funções do arquivo viewa do nosso APP
+from banco.views import index, abrir_conta
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('alunos/', alunos)
-
+    path('', index, name="inicio"),
+    path('abrir_conta', abrir_conta, name="abrir_conta")
 ]

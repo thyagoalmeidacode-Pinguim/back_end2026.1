@@ -14,19 +14,17 @@
             <thead> <!-- Cabeçalho da tabela-->
                 <tr><!-- Linha dentro do cabeçalho -->
                     <th>Nome: </th> <!-- Celula primeira coluna -->
-                    <th>Curso: </th> <!-- Celula da segunda coluna -->
-                    <th>Turma: </th> <!-- Celula da terceira coluna -->
-                    <th>Ações: </th> <!-- Celula da quarta coluna -->
+                    <th>Campus: </th> <!-- Celula da segunda coluna -->  
+                    <th>Ações</th>     
                 </tr>
             </thead>
 
             <tbody> <!-- Corpo da tabela -->                
                 
-                {%  for aluno in dados_alunos  %}
+                {%  for aluno in alunos  %}
                 <tr> <!-- Inicia a tabela -->
                     <td>{{ aluno.nome }}</td>
-                    <td>{{ aluno.curso }}</td>
-                    <td>{{ aluno.turma }}</td>
+                    <td>{{ aluno.campus.nome }}</td>                   
                     <td>
                         <button>Edição</button>
                         <button>Excluir</button>
