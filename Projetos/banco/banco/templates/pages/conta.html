@@ -13,8 +13,25 @@
     </div>
     
     <div class="botoes">
-        <a href="" class="btn btn-success">Depositar</a>
-        <a href="" class="btn btn-warning">Sacar</a>
+        <a href="{% url 'depositar' conta.id %}" class="btn btn-success">Depositar</a>
+        <a href="{% url 'saque' conta.id %}" class="btn btn-warning">Sacar</a>
+    </div>
+
+    <div class="movimentos">
+        <h3>Ultimos movimentos</h3>
+        {% if movimentos %}
+            <ul>
+                {% for mov in movimentos %}
+                    <li class="movimento-{{ mov.tipo }}">
+                        {{ mov.data|date:"d/m H:i" }} <!-- Exibe a data em formato dia/mes hora/minutos  -->
+                        {{ mov.get_tipo_display }}
+                        R$ {{ mov.valor }}                    
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Nenhum movimento ainda.</p>
+        {% endif %}
     </div>
 
 </section>

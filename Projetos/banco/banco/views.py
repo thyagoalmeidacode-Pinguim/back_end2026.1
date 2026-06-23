@@ -6,10 +6,8 @@ from django.contrib import messages #Ferramenta para enviar mensaggens para o us
 from django.db import IntegrityError
 from decimal import Decimal
 
-
 from .models import Cliente, Conta, Movimento
-import random
- 
+import random 
 
 #Função da pagina inicial
 def index(request):
@@ -69,11 +67,15 @@ def conta(request, conta_id):
     #Guarda a conta atarves do id
     conta = get_object_or_404(Conta, id=conta_id)
 
-    return render(request, 'pages/conta.html', {'conta':conta})
+    #Pegar as movimentações(Seleciona os movimento, ordena pela data, exibe somente os 5 ultimos)
+    movimentos = conta.movimento_set.all().order_by('-data')[:5]
+
+    return render(request, 'pages/conta.html', {'conta':conta, 'movimentos': movimentos})
 
 #Função depositar
 def depositar(request, conta_id):
-    conta = get_object_or_404(Conta, id=conta_id)    
+    #Verifica se a conta existe, caso nao da o error 404 (Pagina não encontrada)
+    conta = get_object_or_404(Conta, id=conta_id)
 
     if request.method == "POST":
         try:
@@ -81,11 +83,9 @@ def depositar(request, conta_id):
             if valor > 0: 
                 #Metodo criado no model
                 conta.depositar(valor)
-
-                #Criar a movimetação
-                Movimento.objects.create(conta=conta, tipo='deposito', valor=valor)
+                #Registra o deposito
+                Movimento.objects.create(conta=conta, tipo='deposito', valor=valor)           
                 messages.success(request, f"Depósito de R${valor:.2f} realizado!")
-
                 #redireciona para a pagina conta
                 return redirect('conta', conta_id=conta.id)
             else:
@@ -95,3 +95,39 @@ def depositar(request, conta_id):
 
 
     return render(request, 'pages/depositar.html', {'conta': conta})
+
+def saque(request, conta_id):
+    conta = get_object_or_404(Conta, id=conta_id)
+
+    #Verificar se o botão do formulario foi pressionado
+    if request.method == "POST":
+        try: 
+            valor = Decimal(request.POST.get('valor_form'))
+
+            #if valor > 0 and conta.saldo >= valor:
+
+            if valor > 0 and conta.sacar(valor):
+                #Registra o saque
+                Movimento.objects.create(conta=conta, tipo='saque', valor=valor)
+                messages.success(request, f"Saque de R$ {valor:.2f} reaizado!")
+                return redirect('conta', conta_id=conta.id)
+            else:
+                messages.error(request, 'Saldo insuficiente ou Valor invalido!')
+        except:
+            messages.error(request, 'Saldo insuficiente ou Valor invalido!')
+    
+    return render(request, 'pages/sacar.html', {'conta':conta})
+    
+    
+    
+    
+    
+    
+    
+    """ 
+        Desafio: Desenvolver o modulo de saque 
+            - Criar a função de saque na views
+            - Ciar o template (Formulario)
+            - Configurar a URL
+            - Configurar o botao de saque da conta      
+    """

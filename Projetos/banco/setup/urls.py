@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path
 
 #Importar as funções do arquivo viewa do nosso APP
-from banco.views import index, abrir_conta, conta, depositar
+from banco.views import index, abrir_conta, conta, depositar, saque
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,6 +27,7 @@ urlpatterns = [
 
     #Configurando o endereço para receber o id e informar a funçõa
     path('conta/<int:conta_id>/', conta, name='conta'),
-    path('depositar/', depositar, name='depositar'),
+    path('conta/<int:conta_id>/depositar/', depositar, name='depositar'),
+    path('conta/<int:conta_id>/sacar/', saque, name='saque'),
     
 ]
