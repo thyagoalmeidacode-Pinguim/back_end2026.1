@@ -1,0 +1,42 @@
+<!Doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}Banco Python{% endblock %}</title>
+
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+</head>
+
+<body>
+  <nav>
+    <div class="container">
+      <a href="/" class="logo">🏦 Banco Python</a>
+      <div>
+        <a href="{% url 'inicio' %}">Início</a>
+        <a href="{% url 'abrir_conta' %}">Abrir Conta</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container"><!-- Bloco para exibir mensagens -->
+    <!-- Bloco para exibir mensagens -->
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+      {% endfor %} 
+    {% endif %} 
+
+    {% block content %} {% endblock %}
+  </main>
+
+  <footer style="background-color: rgb(23, 21, 59);">
+    <div class="container">
+      <p>Projeto Educacional - Django</p>
+    </div>
+  </footer>
+</body>
+
+</html>
