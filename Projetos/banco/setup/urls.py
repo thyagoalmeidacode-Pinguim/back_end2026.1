@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path
 
 #Importar as funções do arquivo viewa do nosso APP
-from banco.views import index, abrir_conta, conta, depositar, saque
+from banco.views import index, abrir_conta, conta, depositar, saque, criar_cookie, ler_cookie, login, home, logout, acessar_conta
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,5 +29,17 @@ urlpatterns = [
     path('conta/<int:conta_id>/', conta, name='conta'),
     path('conta/<int:conta_id>/depositar/', depositar, name='depositar'),
     path('conta/<int:conta_id>/sacar/', saque, name='saque'),
+    path('acessar_conta/', acessar_conta, name='acessar_conta'),
+    path('logout/', logout, name='logout'),
+
+    #Cookies
+    path('criar_cookie/', criar_cookie),
+    path('ler_cookie/', ler_cookie),
+
+    #Cria a sessão
+    path('login/', login, name='login'),
+    path('home/', home, name='home'),
+    
+
     
 ]

@@ -15,8 +15,15 @@
     <div class="container">
       <a href="/" class="logo">🏦 Banco Python</a>
       <div>
-        <a href="{% url 'inicio' %}">Início</a>
-        <a href="{% url 'abrir_conta' %}">Abrir Conta</a>
+        {% if request.session.conta_numero %}
+          <a href="{% url 'inicio' %}">Início</a>
+          <a href="{% url 'logout' %}">Sair</a>
+        {% else %}
+          <a href="{% url 'inicio' %}">Início</a>
+          <a href="{% url 'abrir_conta' %}">Abrir Conta</a>
+          <a href="{% url 'acessar_conta' %}">Acessar a conta</a>
+        {% endif %}
+        
       </div>
     </div>
   </nav>
