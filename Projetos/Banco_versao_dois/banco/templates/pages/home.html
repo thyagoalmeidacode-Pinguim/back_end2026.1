@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="hero-section">
+        <div class="hero-badge">🚀 Nova era financeira</div>
+        <h1 class="hero-title">O futuro das suas finanças, hoje.</h1>
+        <p class="hero-subtitle">Uma conta digital completa, gratuita e sem burocracia criada para simplificar a sua vida financeira.</p>
+        <div class="hero-actions">
+            <a href="{% url 'abrir_conta' %}" class="btn btn-primary btn-lg">Abrir sua conta gratuita</a>
+        </div>
+    </section>
+
+    <section class="features-grid">
+        <div class="feature-card">
+            <div class="feature-icon icon-success">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+            </div>
+            <h3>Depósitos Rápidos</h3>
+            <p>Adicione saldo à sua conta instantaneamente via Pix ou boleto sem taxas escondidas.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon icon-primary">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+            </div>
+            <h3>Saques sem Cartão</h3>
+            <p>Precisa de dinheiro físico? Realize saques em redes credenciadas direto pelo aplicativo.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon icon-warning">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+            </div>
+            <h3>Experiência Fluida</h3>
+            <p>Interface intuitiva pensada para você resolver tudo em poucos cliques, sem perder tempo.</p>
+        </div>
+    </section>
+{% endblock %}

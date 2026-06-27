@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Banco Python{% endblock %}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="container nav-wrapper">
+        <a href="/" class="logo">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="18" y1="20" x2="18" y2="10"></line>
+            <line x1="12" y1="20" x2="12" y2="4"></line>
+            <line x1="6" y1="20" x2="6" y2="14"></line>
+          </svg>
+          <span>banco<span>python</span></span>
+        </a>
+
+        <div class="nav-links">
+           {% if request.session.conta_numero %}
+
+              <a href="{% url 'index' %}" class="nav-link">Início</a>
+              <a href="{% url 'sair' %}" class="nav-link logout">Sair</a>
+            {% else %}
+            
+              <a href="{% url 'index' %}" class="nav-link">Início</a>
+              <a href="{% url 'acessar_conta' %}" class="btn btn-secondary">Acessar Conta</a>
+              <a href="{% url 'abrir_conta' %}" class="btn btn-primary">Abrir Conta</a>
+         {% endif %}
+        </div>
+      </div>
+    </nav>
+
+    <main class="container main-content">
+      {% if messages %}
+      <div class="alert-container">
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+      </div>
+      {% endif %} {% block content %} {% endblock %}
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-wrapper">
+        <p>&copy; 2026 Banco Python. Todos os direitos reservados.</p>
+        <span class="badge">Projeto Educacional - Django</span>
+      </div>
+    </footer>
+  </body>
+</html>

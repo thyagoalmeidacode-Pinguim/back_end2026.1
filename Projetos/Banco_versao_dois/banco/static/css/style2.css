@@ -1,0 +1,2946 @@
+
+Gemini
+Novo chat
+Pesquisar chats
+Biblioteca
+Modernizando Layout Fintech com CSS
+Correção de Sintaxe Django Session
+Layout Fintech Moderno e Profissional
+Template Sistema Bancário Python POO
+Campo de Futebol Django MVT
+Futebol MVT Django: Desenho Criativo
+POO com Analogia de Carro
+Análise de Curso e Impacto da IA
+Criação Musical e Limitações de IA
+Shakira Song Generation Assistance
+Feedback de Professor de HTML/CSS
+Imagens de Tênis Casuais para Site
+Login com SVG e CSS
+gere o svg do menu hamburguer
+gere uma logo para um site de um aloja de sapatos chamada stepstyle
+Exercício Moqups: Protótipo Funcional
+gere a imagem: Servidor É um computador na internet que guarda os sites. 👉 Ele responde ao pedido enviando os arquivos do site.
+Image Editing Request Denied
+Sites Bons e Ruins: Exemplos e Debate
+GERE UMA IMAGEM DE ESQUELETO REPRESENTANDO O HTML E UMA PESSOA MAQUIADA REPRESENTANDO O CSS
+Frontend Course Project Planning
+gere uma imagem com analogia visual tipo delivery 🍔 para explicar web)
+Analogias Visuais para Projetos Web
+gere uma imagem em formato retrato para colocar em um slide: Você foi contratado pela empresa JWC para atuar como desenvolvedor front-end. Isso significa que você será responsável por criar a parte visual e interativa de um site, aquilo que o usuário vê e utiliza. A missão é desenvolver um site profissional, ou seja: Bem organizado Visualmente agradável Fácil de usar Adaptado para diferentes telas (celular, tablet, computador) Seguindo boas práticas do mercado Tradução: "Você não está fazendo só um site… você está resolvendo um problema de um cliente real."
+Feedback e Refatoração de Jogo
+Transformando Estudo de Caso em Markdown
+Estudo de Caso: Sistema de Vendas
+Exercícios Python Vetores e Matrizes
+Vetores e Matrizes: Analogias do Mundo Real
+Python Vetores e Matrizes Simplificados
+Segurança e Métricas de Aplicações
+Revisão Técnica e Dashboard Estratégico
+Integração LLM: Riscos e Boas Práticas
+PTD Reescrito: Sprints de Aprendizagem
+Tutorial Python: Estruturas de Repetição
+Adicionando Try-Except ao Jogo
+Estrutura de Repetição: Robô Cozinheiro
+desnhe um dj em uma festa tocando somente uma musica sem repetição
+Classificação de Idade em Python
+Python: Par ou Ímpar com Módulo
+Exercício de Jogo de Adivinhação
+Exercício: Sistema Bancário Simples
+Função Replace(): Busca e Substituição de Texto
+Atalhos e Formatação Python VS Code
+Erro KeyboardInterrupt em Python
+Avaliação de Algoritmo de Cadastro de Alunos
+Conversa com o Gemini
+deixe este layout mais moderno com cara de startup financeira profisiional: <!Doctype html>
+
+<html lang="pt-br">
+
+
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>{% block title %}Banco Python{% endblock %}</title>
+
+
+
+  {% load static %}
+
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+
+</head>
+
+
+
+<body>
+
+  <nav>
+
+    <div class="container">
+
+      <a href="/" class="logo">🏦 Banco Python</a>
+
+      <div>
+
+        <a href="{% url 'index' %}">Início</a>
+
+        <a href="{% url 'abrir_conta' %}">Abrir Conta</a>
+
+        <a href="{% url 'acessar_conta' %}">Acessar Conta</a>
+
+        <a href="{% url 'sair' %}">Sair</a>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+
+
+  <main class="container"><!-- Bloco para exibir mensagens -->
+
+    <!-- Bloco para exibir mensagens -->
+
+    {% if messages %}
+
+      {% for message in messages %}
+
+        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+
+      {% endfor %}
+
+    {% endif %}
+
+
+
+    {% block content %} {% endblock %}
+
+  </main>
+
+
+
+  <footer style="background-color: rgb(23, 21, 59);">
+
+    <div class="container">
+
+      <p>Projeto Educacional - Django</p>
+
+    </div>
+
+  </footer>
+
+</body>
+
+
+
+</html>
+
+Para transformar o seu layout em uma interface digna de uma fintech moderna (pense em Nubank, Stripe ou Inter), precisamos focar em três pilares: tipografia limpa, hierarquia visual clara (destacando os botões de ação) e espaçamento generoso.
+
+Substituí o emoji do banco por um ícone em SVG minimalista e separei os links de navegação para que "Abrir Conta" pareça um botão de destaque (CTA - Call to Action), enquanto "Acessar Conta" se comporta como uma ação secundária.
+
+Aqui está a estrutura atualizada do seu arquivo HTML e o código CSS correspondente para você substituir no seu style.css.
+
+1. O Novo base.html
+Substitua o conteúdo do seu arquivo base por este. Adicionei a fonte Inter (a queridinha das startups) direto do Google Fonts.
+
+HTML
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}Banco Python{% endblock %}</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="container nav-wrapper">
+      <a href="/" class="logo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+        <span>banco<span>python</span></span>
+      </a>
+      
+      <div class="nav-links">
+        <a href="{% url 'index' %}" class="nav-link">Início</a>
+        <a href="{% url 'acessar_conta' %}" class="btn btn-secondary">Acessar Conta</a>
+        <a href="{% url 'abrir_conta' %}" class="btn btn-primary">Abrir Conta</a>
+        <a href="{% url 'sair' %}" class="nav-link logout">Sair</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container main-content">
+    {% if messages %}
+      <div class="alert-container">
+        {% for message in messages %}
+          <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+          </div>
+        {% endfor %} 
+      </div>
+    {% endif %} 
+
+    {% block content %} {% endblock %}
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-wrapper">
+      <p>&copy; 2026 Banco Python. Todos os direitos reservados.</p>
+      <span class="badge">Projeto Educacional - Django</span>
+    </div>
+  </footer>
+</body>
+
+</html>
+2. O Estilo Moderno (style.css)
+Substitua ou adicione este código ao seu arquivo style.css. Ele utiliza variáveis CSS para facilitar a troca de cores se você quiser mudar a identidade visual da sua fintech depois.
+
+CSS
+/* ==========================================================================
+   Variáveis de Design (Design Tokens)
+   ========================================================================== */
+:root {
+  --bg-primary: #f8fafc;
+  --bg-navbar: rgba(255, 255, 255, 0.8);
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  
+  /* Cores da Marca (Estilo Fintech Tecnológica) */
+  --brand-primary: #4f46e5;       /* Indigo moderno */
+  --brand-primary-hover: #4338ca;
+  --brand-secondary: #f1f5f9;     /* Cinza claro para botões secundários */
+  --brand-secondary-hover: #e2e8f0;
+  
+  /* Alertas */
+  --success: #10b981;
+  --error: #ef4444;
+  --warning: #f59e0b;
+}
+
+/* ==========================================================================
+   Resets & Configurações Globais
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ==========================================================================
+   Navbar (Glassmorphism e Layout)
+   ========================================================================== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--bg-navbar);
+  backdrop-filter: blur(12px); /* Efeito de vidro desfocado */
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4.5rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--brand-primary);
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: -0.025em;
+}
+
+.logo span span {
+  color: var(--text-main);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--text-main);
+}
+
+.nav-link.logout {
+  font-size: 0.85rem;
+  padding-left: 0.5rem;
+  border-left: 1px solid var(--brand-secondary-hover);
+}
+
+/* ==========================================================================
+   Botões Profissionais
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.5rem; /* Bordas levemente arredondadas, padrão SaaS */
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--brand-primary);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.2), 0 2px 4px -1px rgba(79, 70, 229, 0.1);
+}
+
+.btn-primary:hover {
+  background-color: var(--brand-primary-hover);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: var(--brand-secondary);
+  color: var(--text-main);
+  border: 1px solid transparent;
+}
+
+.btn-secondary:hover {
+  background-color: var(--brand-secondary-hover);
+}
+
+/* ==========================================================================
+   Estrutura Principal e Alertas
+   ========================================================================== */
+.main-content {
+  min-height: calc(100vh - 10.5rem); /* Garante que o footer fique embaixo */
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.alert-container {
+  margin-bottom: 2rem;
+}
+
+.alert {
+  padding: 1rem 1.25rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-left: 4px solid transparent;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+/* Classes dinâmicas do Django mensagens */
+.alert-success {
+  background-color: #ecfdf5;
+  color: #065f46;
+  border-left-color: var(--success);
+}
+
+.alert-error, .alert-danger {
+  background-color: #fef2f2;
+  color: #991b1b;
+  border-left-color: var(--error);
+}
+
+.alert-warning {
+  background-color: #fffbeb;
+  color: #92400e;
+  border-left-color: var(--warning);
+}
+
+/* ==========================================================================
+   Footer Clean
+   ========================================================================== */
+.footer {
+  background-color: #ffffff !important; /* Sobrescrevendo o inline antigo */
+  border-top: 1px solid #e2e8f0;
+  padding: 1.5rem 0;
+}
+
+.footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.badge {
+  background-color: var(--brand-secondary);
+  color: var(--text-muted);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px; /* Pill shape */
+  font-weight: 500;
+}
+
+/* Responsividade Básica */
+@media (max-width: 640px) {
+  .nav-wrapper, .footer-wrapper {
+    flex-direction: column;
+    gap: 1rem;
+    height: auto;
+    padding: 1rem 0;
+  }
+  .nav-links {
+    gap: 0.75rem;
+    width: 100%;
+    justify-content: center;
+  }
+  .btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+  }
+}
+O que mudou para parecer uma Startup?
+Identidade Visual: Saíram as cores excessivamente escuras ou aleatórias e entrou uma paleta baseada em cinzas azulados (#0f172a), fundo limpo off-white e um roxo/azul tecnológico (#4f46e5) para as ações principais.
+
+Efeito Glassmorphism: O menu superior agora é fixo no topo (position: sticky) e tem um efeito levemente transparente com desfoque de fundo (backdrop-filter), muito comum em apps financeiros modernos.
+
+Hierarquia de Botões: O usuário bate o olho e sabe exatamente onde clicar para "Abrir Conta" porque ele tem peso visual de botão principal, enquanto os outros links são coadjuvantes.
+
+faça com este:
+
+Parece que se esqueceu de incluir o código ou o texto após «faça com este:».
+
+Por favor, cole aqui o código HTML, CSS ou o texto que deseja modernizar para que eu possa aplicar o mesmo estilo de startup financeira profissional!
+
+
+
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+    <section class="hero">
+
+        <h1>Banco Python</h1>
+
+        <p>Sua conta digital gratuita</p>
+
+        <a href="{% url 'abrir_conta' %}" class="btn btn-primary">Abrir sua conta</a>
+
+    </section>
+
+
+
+    <section class="cards">
+
+        <div class="card">
+
+            <h3>💰 Depósitos</h3>
+
+            <p>Deposite dinheiro na sua conta</p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>💳 Saques</h3>
+
+            <p>Saque quando precisar</p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>📱 Simples</h3>
+
+            <p>Tudo de forma fácil e rápida</p>
+
+        </div>
+
+    </section>
+
+{% endblock %}
+
+Para elevar essa página principal ao nível das landing pages de fintechs atuais, vamos ajustar a estrutura do HTML trocando os emojis por ícones geométricos minimalistas (SVG) e criar um layout de grid limpo e espaçado.
+
+Aqui está o código atualizado do seu template e os estilos que você deve adicionar ao seu arquivo style.css.
+
+1. O Novo Template (index.html)
+Substitua o conteúdo do seu arquivo por este:
+
+HTML
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="hero-section">
+        <div class="hero-badge">🚀 Nova era financeira</div>
+        <h1 class="hero-title">O futuro das suas finanças, hoje.</h1>
+        <p class="hero-subtitle">Uma conta digital completa, gratuita e sem burocracia criada para simplificar a sua vida financeira.</p>
+        <div class="hero-actions">
+            <a href="{% url 'abrir_conta' %}" class="btn btn-primary btn-lg">Abrir sua conta gratuita</a>
+        </div>
+    </section>
+
+    <section class="features-grid">
+        <div class="feature-card">
+            <div class="feature-icon icon-success">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+            </div>
+            <h3>Depósitos Rápidos</h3>
+            <p>Adicione saldo à sua conta instantaneamente via Pix ou boleto sem taxas escondidas.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon icon-primary">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+            </div>
+            <h3>Saques sem Cartão</h3>
+            <p>Precisa de dinheiro físico? Realize saques em redes credenciadas direto pelo aplicativo.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon icon-warning">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+            </div>
+            <h3>Experiência Fluida</h3>
+            <p>Interface intuitiva pensada para você resolver tudo em poucos cliques, sem perder tempo.</p>
+        </div>
+    </section>
+{% endblock %}
+2. Estilos Complementares (style.css)
+Adicione estas regras ao final do seu arquivo style.css atual (aquele que configuramos no passo anterior):
+
+CSS
+/* ==========================================================================
+   Hero Section (Landing Page Style)
+   ========================================================================== */
+.hero-section {
+  text-align: center;
+  max-width: 800px;
+  margin: 2rem auto 5rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-badge {
+  background-color: #e0e7ff;
+  color: var(--brand-primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.35rem 1rem;
+  border-radius: 9999px;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.025em;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+  color: var(--text-main);
+  margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin-bottom: 2.5rem;
+  font-weight: 400;
+}
+
+.btn-lg {
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
+  border-radius: 0.625rem;
+}
+
+/* ==========================================================================
+   Cards & Grid de Funcionalidades
+   ========================================================================== */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.feature-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 2.5rem 2rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  border-color: #cbd5e1;
+  box-shadow: 0 12px 20px -3px rgba(0, 0, 0, 0.04), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+}
+
+.feature-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.01em;
+}
+
+.feature-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Containers dos Ícones */
+.feature-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.icon-success {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.icon-primary {
+  background-color: #e0e7ff;
+  color: var(--brand-primary);
+}
+
+.icon-warning {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  .hero-section {
+    margin-bottom: 3rem;
+  }
+  .feature-card {
+    padding: 2rem 1.5rem;
+  }
+}
+O que mudou aqui:
+Tipografia de Impacto: O título principal (.hero-title) agora usa uma fonte massiva com peso 800 e espaçamento de letras ligeiramente reduzido (letter-spacing: -0.04em), que é a assinatura visual de grandes startups de tecnologia.
+
+Badges Contextuais: Adicionamos um pequeno balão informativo acima do título principal para reter a atenção do usuário.
+
+Cards Minimalistas: Em vez de emojis comuns, cada recurso agora possui um ícone em vetor limpo inserido dentro de um box com fundo sutilmente colorido, gerando um contraste elegante e muito mais executivo.
+
+faça com este: {% extends 'base.html' %}
+
+
+
+{% block content %}
+
+<div class="conta-box">
+
+    <h2>Conta: {{ conta.numero }}</h2>
+
+    <p>Cliente: {{ conta.cliente.nome }}</p>
+
+   
+
+    <div class="saldo">
+
+        <strong>Saldo:</strong>
+
+        <span class="saldo-valor">R$ {{ conta.saldo|floatformat:2 }}</span>
+
+    </div>
+
+   
+
+    <div class="botoes">
+
+        <a href="{% url 'depositar' conta.id %}" class="btn btn-success">Depositar</a>
+
+        <a href="{% url 'sacar' conta.id %}" class="btn btn-warning">Sacar</a>
+
+    </div>
+
+   
+
+    <div class="movimentos">
+
+        <h3>Últimos movimentos</h3>
+
+        {% if movimentos %}
+
+            <ul>
+
+                {% for mov in movimentos %}
+
+                    <li class="movimento-{{ mov.tipo }}">
+
+                        {{ mov.data|date:"d/m H:i" }} -
+
+                        {{ mov.get_tipo_display }}:
+
+                        R$ {{ mov.valor|floatformat:2 }}
+
+                    </li>
+
+                {% endfor %}
+
+            </ul>
+
+        {% else %}
+
+            <p>Nenhum movimento ainda.</p>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+Para a tela da Área do Cliente (Dashboard), precisamos sair daquele formato de "caixa única" e adotar um layout modular em blocos. O saldo ganha o maior destaque da tela, os botões viram cartões de ações rápidas e a lista de movimentações se transforma em um extrato bancário moderno e elegante.
+
+Aqui está o código remodelado para o seu template e os novos estilos para o style.css.
+
+1. O Novo Template (conta.html)
+Substitua o arquivo da tela da conta por esta estrutura:
+
+HTML
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="dashboard-container">
+    
+    <header class="dashboard-header">
+        <div class="welcome-text">
+            <h2>Olá, {{ conta.cliente.nome }}</h2>
+            <p class="account-badge">Conta Corrente: <span>{{ conta.numero }}</span></p>
+        </div>
+    </header>
+
+    <div class="dashboard-grid">
+        
+        <div class="dash-card balance-card">
+            <span class="card-label">Saldo disponível</span>
+            <div class="balance-value">
+                <span class="currency">R$</span>
+                <h1>{{ conta.saldo|floatformat:2 }}</h1>
+            </div>
+            <div class="balance-status">
+                <span class="status-dot secured"></span> Atualizado em tempo real
+            </div>
+        </div>
+        
+        <div class="dash-card actions-card">
+            <span class="card-label">Ações rápidas</span>
+            <div class="quick-actions">
+                <a href="{% url 'depositar' conta.id %}" class="action-btn deposit">
+                    <div class="action-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    </div>
+                    <span>Depositar</span>
+                </a>
+                
+                <a href="{% url 'sacar' conta.id %}" class="action-btn withdraw">
+                    <div class="action-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    </div>
+                    <span>Sacar Dinheiro</span>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="dash-card statement-card">
+        <div class="statement-header">
+            <h3>Extrato da conta</h3>
+            <span class="statement-subtitle">Últimos lançamentos</span>
+        </div>
+        
+        <div class="statement-body">
+            {% if movimentos %}
+                <div class="statement-list">
+                    {% for mov in movimentos %}
+                        <div class="statement-item item-{{ mov.tipo }}">
+                            <div class="item-info">
+                                <div class="item-dot"></div>
+                                <div class="item-details">
+                                    <span class="item-title">{{ mov.get_tipo_display }}</span>
+                                    <span class="item-date">{{ mov.data|date:"d M, H:i" }}</span>
+                                </div>
+                            </div>
+                            <div class="item-amount">
+                                R$ {{ mov.valor|floatformat:2 }}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="empty-state">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-muted"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    <p>Nenhuma movimentação encontrada nesta conta.</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+2. Estilos do Dashboard (style.css)
+Adicione estas regras ao seu arquivo CSS para estilizar os novos componentes:
+
+CSS
+/* ==========================================================================
+   Dashboard Container & Header
+   ========================================================================== */
+.dashboard-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.dashboard-header {
+  margin-bottom: 2rem;
+}
+
+.dashboard-header h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--text-main);
+}
+
+.account-badge {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+.account-badge span {
+  font-weight: 600;
+  color: var(--text-main);
+  background-color: #e2e8f0;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+/* ==========================================================================
+   Cards Base e Layout Grid
+   ========================================================================== */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.dash-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 1.75rem;
+}
+
+.card-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+/* Card de Saldo */
+.balance-value {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.balance-value .currency {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.balance-value h1 {
+  font-size: 2.75rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--text-main);
+  line-height: 1;
+}
+
+.balance-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.status-dot.secured {
+  width: 8px;
+  height: 8px;
+  background-color: var(--success);
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+}
+
+/* ==========================================================================
+   Botões de Ação Dinâmicos
+   ========================================================================== */
+.quick-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.action-icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilo Depositar */
+.action-btn.deposit {
+  background-color: #ecfdf5;
+  color: #065f46;
+}
+.action-btn.deposit .action-icon {
+  background-color: #d1fae5;
+}
+.action-btn.deposit:hover {
+  background-color: #d1fae5;
+}
+
+/* Estilo Sacar */
+.action-btn.withdraw {
+  background-color: #fffbeb;
+  color: #92400e;
+}
+.action-btn.withdraw .action-icon {
+  background-color: #fef3c7;
+}
+.action-btn.withdraw:hover {
+  background-color: #fef3c7;
+}
+
+/* ==========================================================================
+   Extrato Bancário (Statement)
+   ========================================================================== */
+.statement-header {
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 1rem;
+}
+
+.statement-header h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.statement-subtitle {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.statement-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.statement-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.statement-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.item-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.item-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--text-muted);
+}
+
+.item-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.item-date {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.item-amount {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+/* Estilização baseada no tipo de transação via backend */
+/* Se a classe do Django retornar 'deposito' ou 'entrada' */
+.statement-item[class*="deposito"] .item-dot,
+.statement-item[class*="entrada"] .item-dot {
+  background-color: var(--success);
+}
+.statement-item[class*="deposito"] .item-amount,
+.statement-item[class*="entrada"] .item-amount {
+  color: var(--success);
+}
+
+/* Se a classe do Django retornar 'saque' ou 'saida' */
+.statement-item[class*="saque"] .item-dot,
+.statement-item[class*="saida"] .item-dot {
+  background-color: var(--error);
+}
+.statement-item[class*="saque"] .item-amount,
+.statement-item[class*="saida"] .item-amount {
+  color: var(--text-main);
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 3rem 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+Detalhes Finos de UX que adicionamos:
+Destaque Numérico: O valor do saldo agora é gigante, usando peso 800, mas o símbolo R$ é menor e sutil para não brigar com o valor numérico.
+
+Cores de Transação Inteligentes: O CSS analisa dinamicamente se a classe do item possui a palavra "deposito" ou "saque" e pinta os valores e os pontos de linha do tempo automaticamente de Verde (Sucesso) ou Vermelho/Preto (Saída).
+
+Empty State Amigável: Caso o cliente não tenha movimentações, ele não vê apenas um espaço vazio, mas um aviso elegante e centralizado com um ícone sutil.
+
+façacom este: {% extends 'base.html' %}
+
+
+
+{% block content %}
+
+<div class="form-box">
+
+    <h2>Acessar Conta</h2>
+
+
+
+    <!-- Metodo é a forma como o formulario envia os dados -->
+
+    <!-- #GET - Os dados ficam visivei no endereço do navegador -->
+
+    <!-- #POST - Não exibe os dados no navegador -->
+
+
+
+    <form method="POST">
+
+        {% csrf_token %} <!-- #Ele criptografa os dados enviados pelo formulario -->
+
+       
+
+        <div class="form-group">
+
+            <label>Informe seu número de conta:</label>
+
+            <input type="text" name="numero_conta" required> <!-- required indica q o campo é obrgatorio-->
+
+        </div>      
+
+
+
+        <div class="form-group">
+
+            <label>Informe o CPF:</label>
+
+            <input type="text" name="cpf"  placeholder="000.000.000-00" required> <!-- required indica q o campo é obrgatorio-->
+
+        </div>
+
+       
+
+        <button type="submit" class="btn btn-primary">Acessar Conta</button>
+
+    </form>
+
+</div>
+
+
+
+{% endblock %}
+
+Para formulários de login e acesso, as fintechs costumam usar telas extremamente limpas, centralizadas e com campos de digitação amplos e confortáveis, passando uma sensação de segurança e facilidade.
+
+Vamos transformar esse formulário simples em uma tela de autenticação robusta e minimalista.
+
+1. O Novo Template (acessar_conta.html)
+Substitua a estrutura atual por esta. Ajustei as tags para melhor acessibilidade (label for) e adicionei um selo de segurança no rodapé do formulário:
+
+HTML
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="auth-container">
+    <div class="auth-card">
+        
+        <div class="auth-header">
+            <h2>Acessar sua conta</h2>
+            <p>Insira seus dados de acesso para entrar no ambiente seguro.</p>
+        </div>
+
+        <form method="POST" class="auth-form"> 
+            {% csrf_token %} 
+            
+            <div class="form-group-modern">
+                <label for="numero_conta">Número da conta</label>
+                <input 
+                    type="text" 
+                    id="numero_conta" 
+                    name="numero_conta" 
+                    placeholder="Ex: 00000-0" 
+                    required
+                >
+            </div>       
+
+            <div class="form-group-modern">
+                <label for="cpf">CPF do titular</label>
+                <input 
+                    type="text" 
+                    id="cpf" 
+                    name="cpf" 
+                    placeholder="000.000.000-00" 
+                    required
+                >
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-block">Acessar minha conta</button>
+        </form>
+
+        <div class="auth-security-footer">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <span>Conexão segura SSL de ponta a ponta</span>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
+2. Estilos do Formulário Moderno (style.css)
+Adicione estas regras ao final do seu arquivo de estilos:
+
+CSS
+/* ==========================================================================
+   Tela de Autenticação (Login / Cadastro)
+   ========================================================================== */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 15rem); /* Centraliza verticalmente na tela */
+  padding: 1rem 0;
+}
+
+.auth-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1.25rem; /* Bordas mais suaves */
+  padding: 3rem 2.5rem;
+  width: 100%;
+  max-width: 440px; /* Largura padrão ideal para telas de login */
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 2.25rem;
+}
+
+.auth-header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.025em;
+  margin-bottom: 0.5rem;
+}
+
+.auth-header p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* ==========================================================================
+   Campos de Entrada (Inputs Modernos)
+   ========================================================================== */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group-modern {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group-modern label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.form-group-modern input {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.625rem;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+/* Efeito de foco profissional (Anel de destaque invisível que expande) */
+.form-group-modern input:focus {
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+}
+
+/* Estilização do Texto Interno Invisível (Placeholders) */
+.form-group-modern input::placeholder {
+  color: #94a3b8;
+}
+
+/* Modificador para o botão ocupar a largura total do card */
+.btn-block {
+  width: 100%;
+  padding: 0.875rem;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+}
+
+/* ==========================================================================
+   Rodapé de Segurança
+   ========================================================================== */
+.auth-security-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #f1f5f9;
+  color: #059669; /* Verde esmeralda para transmitir segurança */
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.auth-security-footer svg {
+  flex-shrink: 0;
+}
+
+/* Responsividade para telas muito pequenas */
+@media (max-width: 480px) {
+  .auth-card {
+    padding: 2rem 1.5rem;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+  }
+}
+O que mudou:
+Foco e Destaque Visual (:focus): Ao clicar em um campo de texto, a borda ganha a cor principal da marca e cria uma aura suave ao redor (box-shadow), um comportamento muito comum nos inputs de interfaces modernas (como Stripe).
+
+Botão Blocado: O botão passa a ocupar 100% da largura da caixa de login. Isso melhora drasticamente a experiência em dispositivos móveis, facilitando o clique com o polegar.
+
+Indicador de Confiança: Detalhes como o ícone de escudo e a cor verde sutil no rodapé diminuem a fricção psicológica do usuário ao digitar dados sensíveis como o CPF.
+
+faça com este: {% extends 'base.html' %}
+
+
+
+{% block content %}
+
+<div class="form-box">
+
+    <h2>Abrir Conta</h2>
+
+
+
+    <!-- Metodo é a forma como o formulario envia os dados -->
+
+    <!-- #GET - Os dados ficam visivei no endereço do navegador -->
+
+    <!-- #POST - Não exibe os dados no navegador -->
+
+
+
+    <form method="POST">
+
+        {% csrf_token %} <!-- #Ele criptografa os dados enviados pelo formulario -->
+
+       
+
+        <div class="form-group">
+
+            <label>Nome completo:</label>
+
+            <input type="text" name="nome" required> <!-- required indica q o campo é obrgatorio-->
+
+        </div>
+
+       
+
+        <div class="form-group">
+
+            <label>CPF:</label>
+
+            <input type="text" name="cpf" placeholder="000.000.000-00" required>
+
+        </div>
+
+       
+
+        <button type="submit" class="btn btn-primary">Criar Conta</button>
+
+    </form>
+
+</div>
+
+
+
+{% endblock %}
+
+Para a tela de Abertura de Conta, seguimos a mesma linha visual limpa e segura da tela de login, mas com uma abordagem mais voltada para o onboarding (boas-vindas ao novo cliente). O design de formulário largo, com inputs espaçosos e textos auxiliares de suporte, ajuda a aumentar a taxa de conversão da sua fintech.
+
+Aqui está a versão modernizada do template e os ajustes necessários.
+
+1. O Novo Template (abrir_conta.html)
+Substitua o conteúdo do seu arquivo atual por este. Adicionei uma estrutura amigável de acessibilidade e um texto de suporte focado em privacidade de dados:
+
+HTML
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="auth-container">
+    <div class="auth-card">
+        
+        <div class="auth-header">
+            <span class="step-badge">Passo 1 de 1</span>
+            <h2>Abra sua conta gratuita</h2>
+            <p>Falta muito pouco para você fazer parte do Banco Python. Preencha os campos abaixo.</p>
+        </div>
+
+        <form method="POST" class="auth-form"> 
+            {% csrf_token %} 
+            
+            <div class="form-group-modern">
+                <label for="nome">Nome completo</label>
+                <input 
+                    type="text" 
+                    id="nome" 
+                    name="nome" 
+                    placeholder="Como está no seu documento" 
+                    required
+                >
+            </div>
+            
+            <div class="form-group-modern">
+                <label for="cpf">CPF</label>
+                <input 
+                    type="text" 
+                    id="cpf" 
+                    name="cpf" 
+                    placeholder="000.000.000-00" 
+                    required
+                >
+                <span class="input-helper">Usamos seu CPF apenas para validações regulatórias.</span>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-block">Criar minha conta agora</button>
+        </form>
+
+        <p class="auth-terms">
+            Ao clicar em continuar, você concorda com nossos Termos de Serviço e Política de Privacidade de Dados (LGPD).
+        </p>
+
+    </div>
+</div>
+{% endblock %}
+2. Estilos Complementares (style.css)
+Como este formulário utiliza a mesma estrutura .auth-container, .auth-card e .form-group-modern que criamos para a tela de login, ele já vai herdar quase todo o visual moderno automaticamente!
+
+Basta adicionar estas poucas linhas extras ao fim do seu arquivo style.css para estilizar os novos detalhes específicos (a badge de passos, o texto auxiliar e os termos):
+
+CSS
+/* ==========================================================================
+   Elementos Adicionais para Cadastro (Onboarding)
+   ========================================================================== */
+
+/* Distintivo de passos (Ex: Passo 1 de 1) */
+.step-badge {
+  display: inline-block;
+  background-color: #f1f5f9;
+  color: var(--brand-primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Texto de ajuda abaixo do input do CPF */
+.input-helper {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+  line-height: 1.3;
+}
+
+/* Nota de termos legais no rodapé do formulário */
+.auth-terms {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 1.5rem;
+  line-height: 1.5;
+}
+Por que esse design funciona para captação de clientes?
+Redução de Fricção: Os rótulos e os placeholders (textos de exemplo dentro dos inputs) guiam o usuário de forma muito natural.
+
+Microtextos de Confiança: Adicionar uma frase sutil como "Usamos seu CPF apenas para validações regulatórias" alivia o receio comum que as pessoas têm de fornecer dados fiscais na internet.
+
+Sensação de Processo Rápido: A .step-badge mostrando "Passo 1 de 1" indica ao usuário que o processo é curto e direto, diminuindo as chances de ele abandonar o cadastro pela metade.
+
+faça com este: {% extends 'base.html' %}
+
+
+
+{% block content %}
+
+<div class="form-box">
+
+    <h2>Depositar</h2>
+
+    <p>Conta: {{ conta.numero }}</p>
+
+    <p>Saldo atual: R$ {{ conta.saldo|floatformat:2 }}</p>
+
+   
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+       
+
+        <div class="form-group">
+
+            <label>Valor:</label>
+
+            <input type="number" name="valor" step="0.01" min="0.01" required>
+
+        </div>
+
+       
+
+        <div class="botoes-form">
+
+            <button type="submit" class="btn btn-success">Confirmar</button>
+
+            <a href="{% url 'conta' conta.id %}" class="btn btn-secondary">Cancelar</a>
+
+        </div>
+
+    </form>
+
+</div>
+
+{% endblock %}
+
+Para a tela de Depósito, a boa prática de UX em fintechs dita que as informações da conta de destino e o saldo atual devem ficar organizados de forma compacta (geralmente em um pequeno sumário ou badge), e o campo de valor deve parecer um input de aplicativo bancário — grande, limpo e direto ao ponto.
+
+Aqui está a versão modernizada do template e os estilos para deixar essa operação com cara de internet banking profissional.
+
+1. O Novo Template (depositar.html)
+Substitua o conteúdo do seu arquivo por este. O layout foi estruturado para isolar as informações de contexto do formulário de entrada:
+
+HTML
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="transaction-container">
+    <div class="transaction-card">
+        
+        <div class="transaction-header">
+            <div class="operation-badge badge-deposit">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                <span>Depósito em Conta</span>
+            </div>
+            <h2>Quanto deseja depositar?</h2>
+        </div>
+
+        <div class="account-summary-box">
+            <div class="summary-item">
+                <span class="summary-label">Conta de destino</span>
+                <span class="summary-value font-mono">{{ conta.numero }}</span>
+            </div>
+            <div class="summary-item">
+                <span class="summary-label">Saldo atual</span>
+                <span class="summary-value text-success">R$ {{ conta.saldo|floatformat:2 }}</span>
+            </div>
+        </div>
+
+        <form method="POST" class="transaction-form">
+            {% csrf_token %}
+            
+            <div class="amount-input-group">
+                <label for="valor">Informe o valor do depósito</label>
+                <div class="currency-input-wrapper">
+                    <span class="currency-prefix">R$</span>
+                    <input 
+                        type="number" 
+                        id="valor"
+                        name="valor" 
+                        step="0.01" 
+                        min="0.01" 
+                        placeholder="0,00"
+                        required
+                        autofocus
+                    >
+                </div>
+            </div>
+            
+            <div class="transaction-actions">
+                <button type="submit" class="btn btn-primary btn-block">Confirmar Depósito</button>
+                <a href="{% url 'conta' conta.id %}" class="btn btn-secondary btn-block-link">Cancelar</a>
+            </div>
+        </form>
+
+    </div>
+</div>
+{% endblock %}
+2. Estilos da Operação (style.css)
+Adicione estas regras ao seu arquivo style.css para criar o layout de transação financeira:
+
+CSS
+/* ==========================================================================
+   Telas de Transação (Depósito / Saque)
+   ========================================================================== */
+.transaction-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 15rem);
+  padding: 1rem 0;
+}
+
+.transaction-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1.25rem;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 460px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+}
+
+.transaction-header {
+  margin-bottom: 1.75rem;
+}
+
+.transaction-header h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+  margin-top: 0.75rem;
+}
+
+/* Badge indicativa da operação */
+.operation-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-deposit {
+  background-color: #ecfdf5;
+  color: #059669;
+}
+
+/* Box de Resumo Informacional */
+.account-summary-box {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.summary-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.summary-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.summary-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.font-mono {
+  font-family: monospace;
+}
+
+.text-success {
+  color: #059669 !important;
+}
+
+/* ==========================================================================
+   Input de Grande Escala para Valores
+   ========================================================================== */
+.transaction-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.amount-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.amount-input-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.currency-input-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-bottom: 2px solid #cbd5e1;
+  padding-bottom: 0.5rem;
+  transition: border-color 0.2s ease;
+}
+
+.currency-input-wrapper:focus-within {
+  border-color: var(--brand-primary);
+}
+
+.currency-prefix {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-main);
+  padding-right: 0.5rem;
+}
+
+.currency-input-wrapper input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 2.25rem; /* Fonte grande padrão para inserção de valores */
+  font-weight: 700;
+  color: var(--text-main);
+  padding: 0;
+}
+
+/* Remove as setinhas padrão do input do tipo number */
+.currency-input-wrapper input::-webkit-outer-spin-button,
+.currency-input-wrapper input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.currency-input-wrapper input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* ==========================================================================
+   Ações de Confirmação e Cancelamento
+   ========================================================================== */
+.transaction-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.btn-block-link {
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  padding: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.btn-block-link:hover {
+  color: var(--text-main);
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .transaction-card {
+    padding: 1.5rem;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+  }
+}
+O que mudou:
+O Campo de Valor Remodelado: Em vez de uma caixa de texto cinza comum, o campo de valor agora usa uma linha de foco (border-bottom) com fonte expandida de 2.25rem. É o comportamento exato que você vê em telas de transferência ou Pix em aplicativos mobile.
+
+Exibição Organizada dos Dados de Origem: As informações de saldo atual e número da conta foram movidas para um box estilizado (.account-summary-box) separado do formulário, evitando poluição visual.
+
+Hierarquia no Cancelamento: O botão de "Confirmar" assume o papel principal de clique, enquanto o "Cancelar" deixa de parecer um botão rígido e passa a se comportar como um link de texto discreto, evitando cliques acidentais e limpando o rodapé da interface.
+
+faça com este: {% extends 'base.html' %}
+
+
+
+{% block content %}
+
+<div class="form-box">
+
+    <h2>Sacar</h2>
+
+    <p>Conta: {{ conta.numero }}</p>
+
+    <p>Saldo disponível: R$ {{ conta.saldo|floatformat:2 }}</p>
+
+   
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+       
+
+        <div class="form-group">
+
+            <label>Valor:</label>
+
+            <input type="number" name="valor" step="0.01" min="0.01" max="{{ conta.saldo }}" required>
+
+        </div>
+
+       
+
+        <div class="botoes-form">
+
+            <button type="submit" class="btn btn-warning">Confirmar</button>
+
+            <a href="{% url 'conta' conta.id %}" class="btn btn-secondary">Cancelar</a>
+
+        </div>
+
+    </form>
+
+</div>
+
+{% endblock %}
+
+Para fechar o ecossistema da sua fintech, a tela de Saque deve seguir o mesmo padrão estritamente profissional e intuitivo da tela de depósito, mudando apenas os elementos de identificação visual (como a cor do distintivo e o ícone) para que o usuário saiba instantaneamente que está realizando uma operação de saída de capital.
+
+Mantivemos o atributo dinâmico max="{{ conta.saldo }}" no input para garantir que a validação nativa do navegador continue impedindo saques maiores do que o saldo disponível.
+
+1. O Novo Template (sacar.html)
+Substitua o conteúdo do seu arquivo por esta estrutura:
+
+HTML
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="transaction-container">
+    <div class="transaction-card">
+        
+        <div class="transaction-header">
+            <div class="operation-badge badge-withdraw">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                <span>Saque em Conta</span>
+            </div>
+            <h2>Quanto deseja sacar?</h2>
+        </div>
+
+        <div class="account-summary-box">
+            <div class="summary-item">
+                <span class="summary-label">Conta de origem</span>
+                <span class="summary-value font-mono">{{ conta.numero }}</span>
+            </div>
+            <div class="summary-item">
+                <span class="summary-label">Saldo disponível</span>
+                <span class="summary-value text-main">R$ {{ conta.saldo|floatformat:2 }}</span>
+            </div>
+        </div>
+
+        <form method="POST" class="transaction-form">
+            {% csrf_token %}
+            
+            <div class="amount-input-group">
+                <label for="valor">Informe o valor do saque</label>
+                <div class="currency-input-wrapper">
+                    <span class="currency-prefix">R$</span>
+                    <input 
+                        type="number" 
+                        id="valor"
+                        name="valor" 
+                        step="0.01" 
+                        min="0.01" 
+                        max="{{ conta.saldo }}"
+                        placeholder="0,00"
+                        required
+                        autofocus
+                    >
+                </div>
+                <span class="input-helper">O valor não pode ser maior do que o seu saldo disponível.</span>
+            </div>
+            
+            <div class="transaction-actions">
+                <button type="submit" class="btn btn-primary btn-block">Confirmar Saque</button>
+                <a href="{% url 'conta' conta.id %}" class="btn btn-secondary btn-block-link">Cancelar</a>
+            </div>
+        </form>
+
+    </div>
+</div>
+{% endblock %}
+2. Estilos Complementares (style.css)
+Como esta tela reutiliza inteligentemente as classes estruturais da tela de depósito (.transaction-container, .transaction-card, .currency-input-wrapper), você só precisará adicionar as regras de cores específicas para a operação de saque no final do seu style.css:
+
+CSS
+/* ==========================================================================
+   Elementos Específicos para a Tela de Saque
+   ========================================================================== */
+
+/* Badge indicativa de Saque (Tons de laranja/âmbar discretos para atenção) */
+.badge-withdraw {
+  background-color: #fffbeb;
+  color: #b45309;
+}
+
+/* Modificação para o efeito de foco no input de saque se preferir uma cor de alerta sutil, 
+   ou mantém o padrão da variável principal (Indonésia/Roxo) para consistência de marca */
+.currency-input-wrapper:focus-within {
+  border-color: var(--brand-primary);
+}
+O que consolida este design como profissional?
+Consistência de Interface (UI Predictability): Telas de transações opostas (Depósito e Saque) que compartilham a mesma estrutura geram conforto visual para o cliente. Ele aprende a usar a interface uma única vez.
+
+Uso Clínico das Cores: Em vez de usar botões excessivamente coloridos (como botões totalmente amarelos ou vermelhos que transmitem "perigo" ou erro), o layout usa uma badge sutil de tom âmbar no topo (.badge-withdraw) apenas para indicar contexto, mantendo o botão de ação principal com o tom azul/roxo padrão da marca para incentivar o clique seguro.
+
+Texto de Apoio à Regra de Negócio: Abaixo do input, adicionamos o microtexto informando sobre o limite do saldo, reduzindo erros de preenchimento antes mesmo de o usuário submeter o formulário.
+
+tem como mudar a paleta de cores. achei muito claro, nao quero nada dark. quro clean mais um pouco mais colrido dentro da modernidade
+
+Com certeza! Para trazer mais personalidade e cor para a sua fintech sem cair em um tema dark ou excessivamente pesado, podemos adotar uma paleta "Vibrant Clean".
+
+Grandes startups financeiras globais (como a Trend Micro, Wise ou Klarna) usam fundos ligeiramente matizados em vez do cinza comum, combinados com uma cor de destaque enérgica e contrastes bem marcados.
+
+Aqui está a nova configuração de variáveis que vai transformar o visual do seu projeto. Basta substituir o bloco :root no topo do seu arquivo style.css:
+
+CSS
+/* ==========================================================================
+   Nova Paleta: Vibrant Clean (Moderna, Confiante e Colorida)
+   ========================================================================== */
+:root {
+  /* Fundos com sutil matiz azulado para dar mais "vida" e profundidade */
+  --bg-primary: #f0f4f8;       /* Um azul-cinza bem claro e fresco, sai do branco sem ser escuro */
+  --bg-navbar: rgba(240, 244, 248, 0.85);
+  
+  /* Textos com alto contraste */
+  --text-main: #0f1e36;         /* Azul marinho profundo de alta confiança */
+  --text-muted: #4a5d78;        /* Azul médio para informações secundárias */
+  
+  /* Cores da Marca (O "Colorido" Moderno) */
+  --brand-primary: #0066ff;       /* Azul Elétrico Digital (Estilo Revolut/Wise) */
+  --brand-primary-hover: #0052cc;
+  
+  /* Botões Secundários e Cards ganham um fundo levemente colorido para destacar */
+  --brand-secondary: #e1e9f3;     /* Tom médio que faz os elementos "saltarem" do fundo */
+  --brand-secondary-hover: #cbd7e7;
+  
+  /* Alertas e Indicadores Financeiros bem vivos */
+  --success: #10b981;             /* Verde Esmeralda vibrante (Entradas) */
+  --error: #ff3b30;               /* Vermelho Intenso Apple (Saídas) */
+  --warning: #f59e0b;             /* Âmbar/Laranja */
+}
+Ajustes Extras de Contraste para essa Paleta
+Para garantir que os cards e os inputs fiquem perfeitos com esse novo fundo mais vivo, adicione ou ajuste as seguintes classes que já criamos nos passos anteriores:
+
+CSS
+/* Atualização dos Cards do Dashboard e Forms para se destacarem do novo fundo */
+.dash-card, .auth-card, .transaction-card, .feature-card {
+  background: #ffffff !important;
+  border: 1px solid #d2deee !important; /* Borda levemente mais marcada seguindo a paleta */
+  box-shadow: 0 10px 25px -5px rgba(15, 30, 54, 0.05); /* Sombra azulada sutil */
+}
+
+/* Deixar o sumário de conta com um tom azulado muito elegante */
+.account-summary-box {
+  background-color: #e6effa !important;
+  border: 1px solid #cbdbee !important;
+}
+
+/* Linha inferior dos inputs de valor (Depósito/Saque) com mais presença */
+.currency-input-wrapper {
+  border-bottom: 2px solid #9ab4d4;
+}
+
+/* Distintivos (Badges) com as novas cores harmônicas */
+.hero-badge {
+  background-color: #e1e9f3;
+  color: var(--brand-primary);
+}
+
+.step-badge {
+  background-color: #e1e9f3;
+  color: var(--brand-primary);
+}
+O que muda na prática com essa paleta?
+O Fundo (--bg-primary): Em vez daquele cinza genérico quase branco, o fundo agora é um azul-cinza gelo bem moderno. Ele dá a sensação de um sistema financeiro robusto e envelopa melhor os cards brancos.
+
+O Azul Elétrico (--brand-primary): É a cor atual das principais fintechs europeias. É um azul com saturação alta que brilha na tela clean, trazendo o ar tecnológico que você procura.
+
+Os Textos (--text-main): Saíram os pretos puros e entraram tons de azul marinho de altíssima densidade. Isso mantém a leitura extremamente confortável, profissional e integrada ao restante das cores.
+
+gere o stly.css completo ja com essas melhorias
+
+O ficheiro style.css completo está pronto para ser adicionado ao teu projeto Django.
+
+Este ficheiro unifica todas as telas que modernizámos (Landing Page, Dashboard/Extrato, Autenticação, Onboarding, Depósito e Saque) sob a nova identidade visual "Vibrant Clean", garantindo consistência completa na aplicação.
+Ícone de CSS
+style
+ CSS 
+Abrir
+
+Detalhes importantes incluídos nesta versão:
+Paleta Unificada: O fundo azul-cinza gelo (--bg-primary), o texto marinho profundo (--text-main) e o azul digital (--brand-primary) comandam toda a aplicação.
+
+Glassmorphism no Topo: A navbar agora possui um efeito de vidro fosco (backdrop-filter: blur) que acompanha o scroll da página, padrão visual de apps modernos.
+
+Alertas do Django Prontos: Já adicionei os estilos para a tag de mensagens do Django (.alert-success, .alert-error e .alert-warning) usando as cores vibrantes ajustadas da paleta.
+
+Responsividade Avançada: Foram adicionados breakpoints para garantir que todos os formulários e o extrato bancário se adaptem perfeitamente a ecrãs de telemóvel (mobile).
+
+Basta copiar ou fazer o download do ficheiro e substituir o teu style.css atual!
+
+
+
+
+O Gemini não é humano. Pode cometer erros, por isso verifique as informações.
+
+/* ==========================================================================
+   BANCO PYTHON - STYLE.CSS (Vibrant Clean Palette)
+   Paleta: Moderna, Confiante, Colorida e Altamente Profissional
+   ========================================================================== */
+
+:root {
+  /* Fundos com sutil matiz azulado para dar mais vida e profundidade */
+  --bg-primary: #f0f4f8;       /* Azul-cinza bem claro e fresco */
+  --bg-navbar: rgba(240, 244, 248, 0.85);
+  
+  /* Textos com alto contraste */
+  --text-main: #0f1e36;         /* Azul marinho profundo de alta confiança */
+  --text-muted: #4a5d78;        /* Azul médio para informações secundárias */
+  
+  /* Cores da Marca (O "Colorido" Moderno) */
+  --brand-primary: #0066ff;       /* Azul Elétrico Digital (Estilo Revolut/Wise) */
+  --brand-primary-hover: #0052cc;
+  
+  /* Botões Secundários e Cards ganham fundo levemente colorido para destacar */
+  --brand-secondary: #e1e9f3;     /* Tom médio que faz os elementos saltarem do fundo */
+  --brand-secondary-hover: #cbd7e7;
+  
+  /* Alertas e Indicadores Financeiros bem vivos */
+  --success: #10b981;             /* Verde Esmeralda vibrante (Entradas) */
+  --error: #ff3b30;               /* Vermelho Intenso Apple (Saídas) */
+  --warning: #f59e0b;             /* Âmbar/Laranja */
+}
+
+/* ==========================================================================
+   Resets & Configurações Globais
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ==========================================================================
+   Navbar (Glassmorphism e Layout)
+   ========================================================================== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--bg-navbar);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid #d2deee;
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4.5rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--brand-primary);
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: -0.025em;
+}
+
+.logo span span {
+  color: var(--text-main);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--text-main);
+}
+
+.nav-link.logout {
+  font-size: 0.85rem;
+  padding-left: 0.5rem;
+  border-left: 1px solid var(--brand-secondary-hover);
+}
+
+/* ==========================================================================
+   Botões Profissionais
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--brand-primary);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 4px 6px -1px rgba(0, 102, 255, 0.2), 0 2px 4px -1px rgba(0, 102, 255, 0.1);
+}
+
+.btn-primary:hover {
+  background-color: var(--brand-primary-hover);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: var(--brand-secondary);
+  color: var(--text-main);
+  border: 1px solid transparent;
+}
+
+.btn-secondary:hover {
+  background-color: var(--brand-secondary-hover);
+}
+
+.btn-block {
+  width: 100%;
+  padding: 0.875rem;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+}
+
+/* ==========================================================================
+   Estrutura Principal e Alertas do Django
+   ========================================================================== */
+.main-content {
+  min-height: calc(100vh - 10.5rem);
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.alert-container {
+  margin-bottom: 2rem;
+}
+
+.alert {
+  padding: 1rem 1.25rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-left: 4px solid transparent;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.alert-success {
+  background-color: #ecfdf5;
+  color: #065f46;
+  border-left-color: var(--success);
+}
+
+.alert-error, .alert-danger {
+  background-color: #fef2f2;
+  color: #991b1b;
+  border-left-color: var(--error);
+}
+
+.alert-warning {
+  background-color: #fffbeb;
+  color: #92400e;
+  border-left-color: var(--warning);
+}
+
+/* ==========================================================================
+   Cards Base (Estilo Startup Financeira)
+   ========================================================================== */
+.dash-card, .auth-card, .transaction-card, .feature-card {
+  background: #ffffff !important;
+  border: 1px solid #d2deee !important;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px -5px rgba(15, 30, 54, 0.05);
+}
+
+/* ==========================================================================
+   Hero Section (Landing Page / Home)
+   ========================================================================== */
+.hero-section {
+  text-align: center;
+  max-width: 800px;
+  margin: 2rem auto 5rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-badge {
+  background-color: var(--brand-secondary);
+  color: var(--brand-primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.35rem 1rem;
+  border-radius: 9999px;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.025em;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+  color: var(--text-main);
+  margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin-bottom: 2.5rem;
+  font-weight: 400;
+}
+
+.btn-lg {
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
+  border-radius: 0.625rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.feature-card {
+  padding: 2.5rem 2rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  border-color: #cbd7e7 !important;
+  box-shadow: 0 12px 20px -3px rgba(15, 30, 54, 0.08);
+}
+
+.feature-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.75rem;
+}
+
+.feature-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.feature-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.icon-success { background-color: #d1fae5; color: #065f46; }
+.icon-primary { background-color: #e0h7ff; color: var(--brand-primary); }
+.icon-warning { background-color: #fef3c7; color: #92400e; }
+
+/* Ajuste específico para o ícone primary herdar a cor elétrica da marca */
+.icon-primary {
+  background-color: #e6effa;
+  color: var(--brand-primary);
+}
+
+/* ==========================================================================
+   Dashboard Container & Header
+   ========================================================================== */
+.dashboard-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.dashboard-header {
+  margin-bottom: 2rem;
+}
+
+.dashboard-header h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--text-main);
+}
+
+.account-badge {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+.account-badge span {
+  font-weight: 600;
+  color: var(--text-main);
+  background-color: var(--brand-secondary);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.dash-card {
+  padding: 1.75rem;
+}
+
+.card-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.balance-value {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.balance-value .currency {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.balance-value h1 {
+  font-size: 2.75rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--text-main);
+  line-height: 1;
+}
+
+.balance-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.status-dot.secured {
+  width: 8px;
+  height: 8px;
+  background-color: var(--success);
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+}
+
+.quick-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.action-icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.action-btn.deposit {
+  background-color: #ecfdf5;
+  color: #065f46;
+}
+.action-btn.deposit .action-icon {
+  background-color: #d1fae5;
+}
+.action-btn.deposit:hover {
+  background-color: #d1fae5;
+}
+
+.action-btn.withdraw {
+  background-color: #fffbeb;
+  color: #92400e;
+}
+.action-btn.withdraw .action-icon {
+  background-color: #fef3c7;
+}
+.action-btn.withdraw:hover {
+  background-color: #fef3c7;
+}
+
+/* ==========================================================================
+   Extrato Bancário (Statement)
+   ========================================================================== */
+.statement-header {
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 1rem;
+}
+
+.statement-header h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.statement-subtitle {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.statement-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.statement-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.statement-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.item-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.item-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--text-muted);
+}
+
+.item-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.item-date {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.item-amount {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.statement-item[class*="deposito"] .item-dot,
+.statement-item[class*="entrada"] .item-dot {
+  background-color: var(--success);
+}
+.statement-item[class*="deposito"] .item-amount,
+.statement-item[class*="entrada"] .item-amount {
+  color: var(--success);
+}
+
+.statement-item[class*="saque"] .item-dot,
+.statement-item[class*="saida"] .item-dot {
+  background-color: var(--error);
+}
+.statement-item[class*="saque"] .item-amount,
+.statement-item[class*="saida"] .item-amount {
+  color: var(--text-main);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   Telas de Autenticação & Onboarding
+   ========================================================================== */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 15rem);
+  padding: 1rem 0;
+}
+
+.auth-card {
+  padding: 3rem 2.5rem;
+  width: 100%;
+  max-width: 440px;
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 2.25rem;
+}
+
+.auth-header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.025em;
+  margin-bottom: 0.5rem;
+}
+
+.auth-header p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group-modern {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group-modern label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.form-group-modern input {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.625rem;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.form-group-modern input:focus {
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 4px rgba(0, 102, 255, 0.1);
+}
+
+.form-group-modern input::placeholder {
+  color: #94a3b8;
+}
+
+.auth-security-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #f1f5f9;
+  color: #059669;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.step-badge {
+  display: inline-block;
+  background-color: var(--brand-secondary);
+  color: var(--brand-primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.input-helper {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+  line-height: 1.3;
+}
+
+.auth-terms {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 1.5rem;
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   Telas de Transação (Depósito / Saque)
+   ========================================================================== */
+.transaction-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 15rem);
+  padding: 1rem 0;
+}
+
+.transaction-card {
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 460px;
+}
+
+.transaction-header {
+  margin-bottom: 1.75rem;
+}
+
+.transaction-header h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+  margin-top: 0.75rem;
+}
+
+.operation-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-deposit {
+  background-color: #ecfdf5;
+  color: #059669;
+}
+
+.badge-withdraw {
+  background-color: #fffbeb;
+  color: #b45309;
+}
+
+.account-summary-box {
+  background-color: #e6effa !important;
+  border: 1px solid #cbdbee !important;
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.summary-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.summary-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.summary-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.font-mono {
+  font-family: monospace;
+}
+
+.text-success {
+  color: #059669 !important;
+}
+
+.transaction-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.amount-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.amount-input-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.currency-input-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-bottom: 2px solid #9ab4d4;
+  padding-bottom: 0.5rem;
+  transition: border-color 0.2s ease;
+}
+
+.currency-input-wrapper:focus-within {
+  border-color: var(--brand-primary);
+}
+
+.currency-prefix {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-main);
+  padding-right: 0.5rem;
+}
+
+.currency-input-wrapper input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--text-main);
+  padding: 0;
+}
+
+.currency-input-wrapper input::-webkit-outer-spin-button,
+.currency-input-wrapper input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.currency-input-wrapper input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.transaction-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.btn-block-link {
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  padding: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.btn-block-link:hover {
+  color: var(--text-main);
+}
+
+/* ==========================================================================
+   Footer Clean
+   ========================================================================== */
+.footer {
+  background-color: #ffffff !important;
+  border-top: 1px solid #d2deee;
+  padding: 1.5rem 0;
+  margin-top: auto;
+}
+
+.footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.badge {
+  background-color: var(--brand-secondary);
+  color: var(--text-muted);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   Responsividade (Mobile First Optimization)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  .hero-section {
+    margin-bottom: 3rem;
+  }
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+  .feature-card {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav-wrapper, .footer-wrapper {
+    flex-direction: column;
+    gap: 1rem;
+    height: auto;
+    padding: 1rem 0;
+  }
+  .nav-links {
+    gap: 0.75rem;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+  }
+  .auth-card, .transaction-card {
+    padding: 2rem 1.25rem;
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+}

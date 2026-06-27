@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="dashboard-container">
+    
+    <header class="dashboard-header">
+        <div class="welcome-text">
+            <h2>Olá, {{ conta.cliente.nome }}</h2>
+            <p class="account-badge">Conta Corrente: <span>{{ conta.numero }}</span></p>
+        </div>
+    </header>
+
+    <div class="dashboard-grid">
+        
+        <div class="dash-card balance-card">
+            <span class="card-label">Saldo disponível</span>
+            <div class="balance-value">
+                <span class="currency">R$</span>
+                <h1>{{ conta.saldo|floatformat:2 }}</h1>
+            </div>
+            <div class="balance-status">
+                <span class="status-dot secured"></span> Atualizado em tempo real
+            </div>
+        </div>
+        
+        <div class="dash-card actions-card">
+            <span class="card-label">Ações rápidas</span>
+            <div class="quick-actions">
+                <a href="{% url 'depositar' conta.id %}" class="action-btn deposit">
+                    <div class="action-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    </div>
+                    <span>Depositar</span>
+                </a>
+                
+                <a href="{% url 'sacar' conta.id %}" class="action-btn withdraw">
+                    <div class="action-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    </div>
+                    <span>Sacar Dinheiro</span>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="dash-card statement-card">
+        <div class="statement-header">
+            <h3>Extrato da conta</h3>
+            <span class="statement-subtitle">Últimos lançamentos</span>
+        </div>
+        
+        <div class="statement-body">
+            {% if movimentos %}
+                <div class="statement-list">
+                    {% for mov in movimentos %}
+                        <div class="statement-item item-{{ mov.tipo }}">
+                            <div class="item-info">
+                                <div class="item-dot"></div>
+                                <div class="item-details">
+                                    <span class="item-title">{{ mov.get_tipo_display }}</span>
+                                    <span class="item-date">{{ mov.data|date:"d M, H:i" }}</span>
+                                </div>
+                            </div>
+                            <div class="item-amount">
+                                R$ {{ mov.valor|floatformat:2 }}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="empty-state">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-muted"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    <p>Nenhuma movimentação encontrada nesta conta.</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+</div>
+{% endblock %}

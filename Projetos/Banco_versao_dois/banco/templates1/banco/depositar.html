@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="form-box">
+    <h2>Depositar</h2>
+    <p>Conta: {{ conta.numero }}</p>
+    <p>Saldo atual: R$ {{ conta.saldo|floatformat:2 }}</p>
+    
+    <form method="POST">
+        {% csrf_token %}
+        
+        <div class="form-group">
+            <label>Valor:</label>
+            <input type="number" name="valor" step="0.01" min="0.01" required>
+        </div>
+        
+        <div class="botoes-form">
+            <button type="submit" class="btn btn-success">Confirmar</button>
+            <a href="{% url 'conta' conta.id %}" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

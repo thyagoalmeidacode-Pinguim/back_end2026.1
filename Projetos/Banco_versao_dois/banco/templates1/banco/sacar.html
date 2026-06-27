@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="form-box">
+    <h2>Sacar</h2>
+    <p>Conta: {{ conta.numero }}</p>
+    <p>Saldo disponível: R$ {{ conta.saldo|floatformat:2 }}</p>
+    
+    <form method="POST">
+        {% csrf_token %}
+        
+        <div class="form-group">
+            <label>Valor:</label>
+            <input type="number" name="valor" step="0.01" min="0.01" max="{{ conta.saldo }}" required>
+        </div>
+        
+        <div class="botoes-form">
+            <button type="submit" class="btn btn-warning">Confirmar</button>
+            <a href="{% url 'conta' conta.id %}" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

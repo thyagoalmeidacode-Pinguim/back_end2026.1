@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="transaction-container">
+    <div class="transaction-card">
+        
+        <div class="transaction-header">
+            <div class="operation-badge badge-deposit">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                <span>Depósito em Conta</span>
+            </div>
+            <h2>Quanto deseja depositar?</h2>
+        </div>
+
+        <div class="account-summary-box">
+            <div class="summary-item">
+                <span class="summary-label">Conta de destino</span>
+                <span class="summary-value font-mono">{{ conta.numero }}</span>
+            </div>
+            <div class="summary-item">
+                <span class="summary-label">Saldo atual</span>
+                <span class="summary-value text-success">R$ {{ conta.saldo|floatformat:2 }}</span>
+            </div>
+        </div>
+
+        <form method="POST" class="transaction-form">
+            {% csrf_token %}
+            
+            <div class="amount-input-group">
+                <label for="valor">Informe o valor do depósito</label>
+                <div class="currency-input-wrapper">
+                    <span class="currency-prefix">R$</span>
+                    <input 
+                        type="number" 
+                        id="valor"
+                        name="valor" 
+                        step="0.01" 
+                        min="0.01" 
+                        placeholder="0,00"
+                        required
+                        autofocus
+                    >
+                </div>
+            </div>
+            
+            <div class="transaction-actions">
+                <button type="submit" class="btn btn-primary btn-block">Confirmar Depósito</button>
+                <a href="{% url 'conta' conta.id %}" class="btn btn-secondary btn-block-link">Cancelar</a>
+            </div>
+        </form>
+
+    </div>
+</div>
+{% endblock %}
