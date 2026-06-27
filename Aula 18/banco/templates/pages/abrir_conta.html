@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="form-box">
+    <h2>Abrir Conta</h2>
+
+    <!-- Metodo é a forma como o formulario envia os dados -->
+    <!-- #GET - Os dados ficam visivei no endereço do navegador -->
+    <!-- #POST - Não exibe os dados no navegador -->
+
+    <form method="POST"> 
+        {% csrf_token %} <!-- #Ele criptografa os dados enviados pelo formulario -->
+        
+        <div class="form-group">
+            <label>Nome completo:</label>
+            <input type="text" name="nome" required> <!-- required indica q o campo é obrgatorio-->
+        </div>
+        
+        <div class="form-group">
+            <label>CPF:</label>
+            <input type="text" name="cpf" placeholder="000.000.000-00" required>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Criar Conta</button>
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="form-box">
+    <h2>Sacar</h2>
+    <p>Conta:{{ conta.numero }} </p>
+    <p>Saldo Atual: R$ {{ conta.saldo }}</p>
+
+    <!-- GET -> Visiveis no enderço (url) -->
+    <!-- POST -> Não ficam aparentes na URL  -->
+    <form method="POST">
+        {% csrf_token %} <!-- Ferramenta de segurança do django para formularios -->
+
+        <div class="form-group">
+            <label>Valor: </label>
+            <input type="number" name="valor_form" step="0.01" min="0.01" max="{{ conta }}" required>
+        </div>
+
+        <div class="botoes-form">
+            <button type="submit" class="btn btn-success">Confirmar</button>
+            <a href="{% url 'conta' conta.id %}" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </form>
+
+</section>
+{% endblock %}
