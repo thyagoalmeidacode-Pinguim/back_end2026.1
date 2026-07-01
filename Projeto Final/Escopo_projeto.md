@@ -25,7 +25,7 @@ Desenvolver um projeto web utilizando o framework Django, proporcionando aos alu
 9. Forms: Criação de formulários para entrada de dados.
 
 ## Etapas do projeto:
-
+### Previsão de Entregas Aula 01/07/2026
 1. Configuração do ambiente:
 2. Instalação do Python e do Django.
 3. Criação do projeto Django.
@@ -33,16 +33,22 @@ Desenvolver um projeto web utilizando o framework Django, proporcionando aos alu
 5. Criação dos modelos:
 6. Definição dos modelos para representar os dados do aplicativo (ex: usuários, posts, comentários).
 7. Criação das migrations e aplicação das mesmas no banco de dados.
+
+### Previsão de Entregas Aula 03/07/2026
 8. Criação das views:
 9. Criação dos templates: Criação dos templates utilizando HTML e CSS.
 10. Utilização de Bootstrap para estilização.
 11. Utilização de herança de templates para organizar a estrutura dos templates.
 12. Configuração das URLs:
 13. Mapeamento das URLs para as views.
-14. Implementação de funcionalidades adicionais:
-15. Autenticação de usuários.
+14. Autenticação de usuários.
 
-##Exemplo de aplicação:
+### Previsão de Entregas Aula 06/07/2026
+15. Ajsutes Finais no projeto
+16. Apresentação
+17. Entrega Final e encerramento.
+
+## Exemplo de aplicação:
 
 ### BLOG SIMPLES, onde os usuários podem:
 
